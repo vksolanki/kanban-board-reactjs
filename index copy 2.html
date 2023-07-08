@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="kanban-board">
+      <div class="board-column">
+        <div class="board-column-header bg-primary">To Do</div>
+        <div class="board-column-content">
+          <div class="card">
+            <span class="card-remove-icon"><i class="fas fa-trash"></i></span>
+            <div class="card-title">Task 1</div>
+          </div>
+          <div class="card">
+            <span class="card-remove-icon"><i class="fas fa-trash"></i></span>
+            <div class="card-title">Task 2</div>
+          </div>
+          <div class="card">
+            <span class="card-remove-icon"><i class="fas fa-trash"></i></span>
+            <div class="card-title">Task 3</div>
+          </div>
+          <div class="card">
+            <span class="card-remove-icon"><i class="fas fa-trash"></i></span>
+            <div class="card-title">Long Task Title That Takes Up Multiple Lines</div>
+          </div>
+        </div>
+        <div class="column-add-task">
+          <input type="text" placeholder="Add Task">
+          <button class="btn btn-primary">+</button>
+        </div>
+      </div>
+      <div class="board-column">
+        <div class="board-column-header bg-secondary">In Progress</div>
+        <div class="board-column-content">
+          <div class="card">
+            <span class="card-remove-icon"><i class="fas fa-trash"></i></span>
+            <div class="card-title">Task 4</div>
+          </div>
+          <div class="card">
+            <span class="card-remove-icon"><i class="fas fa-trash"></i></span>
+            <div class="card-title">Task 5</div>
+          </div>
+          <div class="card">
+            <span class="card-remove-icon"><i class="fas fa-trash"></i></span>
+            <div class="card-title">Task 6</div>
+          </div>
+        </div>
+        <div class="column-add-task">
+          <input type="text" placeholder="Add Task">
+          <button class="btn btn-primary">+</button>
+        </div>
+      </div>
+      <div class="board-column">
+        <div class="board-column-header bg-success">Done</div>
+        <div class="board-column-content">
+          <div class="card">
+            <span class="card-remove-icon"><i class="fas fa-trash"></i></span>
+            <div class="card-title">Task 7</div>
+          </div>
+          <div class="card">
+            <span class="card-remove-icon"><i class="fas fa-trash"></i></span>
+            <div class="card-title">Task 8</div>
+          </div>
+        </div>
+        <div class="column-add-task">
+          <input type="text" placeholder="Add Task">
+          <button class="btn btn-primary">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
