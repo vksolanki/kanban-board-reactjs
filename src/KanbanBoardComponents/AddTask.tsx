@@ -21,13 +21,15 @@ const AddTask: React.FC<AddTaskProps> = ({ status }) => {
   };
 
   const handleTaskSaveEvent = (event: any) => {
-    dispatch(addTask({ title: taskTitle, status: status }))
+    dispatch(addTask({ title: taskTitle, status: status?.status }))
   };
 
   return (
     <div>
-      <textarea value={taskTitle} onChange={handleTextareaChange} />
-      <button onClick={handleTaskSaveEvent}>Save</button>
+      <div className="w-100">
+        <textarea value={taskTitle} onChange={handleTextareaChange} className='w-100' style={{ height: '40px' }} />
+      </div>
+      <button onClick={handleTaskSaveEvent} className='macbook-button small'>Add</button>
     </div>
   );
 };
