@@ -4,7 +4,7 @@ Note: This app is only created for learn and explore reactjs.
 
 Kanban board made using React and Redux
 
-Run following commands to get started
+Run following command to get started
 
  ```
 npm install
