@@ -1,39 +1,22 @@
 .kanban-board {
   display: flex;
   justify-content: space-between;
+  gap: 15px;
 }
 
 .board-column {
   flex-basis: 30%;
-  background-color: #f2f2f2;
+  background-color: #f1f2f4;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .board-column-header {
-  font-size: 15px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #dbebff;
-  padding: 8px;
-  text-align: left;
-  background: #0f55b4;
-  border-radius: 3px;
+  width: 100%;
+  display: block;
   float: left;
-}
-
-.todo-column .board-column-header
-{
-  background-color: #d7d7d7;
-  color: rgb(39, 39, 39);
-}
-
-.done-column .board-column-header
-{
-  background-color: #d5ffe1;
-  color: #00992c;
-}
+  margin-bottom: 10px;
 }
 
 .board-column-content {
@@ -42,11 +25,12 @@
 
 .card {
   background-color: #ffffff;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 5px !important;
+  margin-bottom: 5px;
   border-radius: 5px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   position: relative;
+  text-align: left;
 }
 
 .card-remove-icon {
@@ -64,6 +48,7 @@
   margin-top: 10px;
   display: flex;
   align-items: center;
+  float: left;
 }
 
 .column-add-task input {
@@ -86,3 +71,53 @@
 .card:hover .card-remove-icon {
   opacity: 1;
 }
+
+span.status-lable {
+  color: #172b4d;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+span.status-dot {
+  width: 4px;
+  height: 18px;
+  display: block;
+  float: left;
+  margin-right: 5px;
+}
+
+
+
+button.icon-button.btn.btn-default {
+  border: 1px solid #CCCCCC;
+  background: #edeced;
+}
+
+/*******************************/
+
+.scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: #8b8b8b;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.board-column-content.scroll-container {
+  overflow-y: scroll;
+  float: left;
+  width: 100%;
+  max-height: 100vh;
+}
+
+/*******************************/
