@@ -1,0 +1,47 @@
+.macbook-button {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Small Button */
+.macbook-button.small {
+    font-size: 12px;
+    padding: 8px 16px;
+}
+
+/* Medium Button (default size, no additional class) */
+
+/* Large Button */
+.macbook-button.large {
+    font-size: 18px;
+    padding: 12px 24px;
+}
+
+
+.macbook-button:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.macbook-button:active {
+    background-color: #d0d0d0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.w-100 {
+    width: 100%;
+}

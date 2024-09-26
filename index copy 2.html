@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="kanban-board">
+      <div class="todo-column board-column">
+        <div class="board-column-header">
+          <span class="status-dot pull-left"></span>
+          <span class="status-lable pull-left">To Do</span>
+          <div class="pull-right">
+            <button class="icon-button">+</button>
+          </div>
+        </div>
+        <div class="board-column-content">
+          <div draggable="true" class="card" style="cursor: move;"><span class="card-remove-icon"><i
+                class="fas fa-trash"></i></span>
+            <div class="card-title">asadas</div>
+          </div>
+          <div draggable="true" class="card" style="cursor: move;"><span class="card-remove-icon"><i
+                class="fas fa-trash"></i></span>
+            <div class="card-title">asadasasd asdas</div>
+          </div>
+        </div>
+        <!-- <div class="column-add-task">
+          <div><textarea>asadasasd asdas</textarea><button>Save</button></div>
+        </div> -->
+      </div>
+      <div class="inprogress-column board-column">
+        <h2 class="board-column-header">In Progress</h2>
+        <div class="board-column-content">
+          <div draggable="true" class="card" style="cursor: move;"><span class="card-remove-icon"><i
+                class="fas fa-trash"></i></span>
+            <div class="card-title">asadas</div>
+          </div>
+          <div draggable="true" class="card" style="cursor: move;"><span class="card-remove-icon"><i
+                class="fas fa-trash"></i></span>
+            <div class="card-title">asdas</div>
+          </div>
+        </div>
+        <div class="column-add-task">
+          <div><textarea>asdas</textarea><button>Save</button></div>
+        </div>
+      </div>
+      <div class="done-column board-column">
+        <h2 class="board-column-header">Done</h2>
+        <div class="board-column-content"></div>
+        <div class="column-add-task">
+          <div><textarea></textarea><button>Save</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
