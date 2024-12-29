@@ -1,0 +1,60 @@
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-form h2 {
+  margin-bottom: 1rem;
+  color: #0e6dfb; /* Primary color */
+}
+
+.task-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 600;
+  color: #333;
+}
+
+.task-form input,
+.task-form select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.task-form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.task-form button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.task-form .save-btn {
+  background-color: #0e6dfb; /* Primary color */
+  color: #fff;
+}
+
+.task-form .save-btn:hover {
+  background-color: #0a58ca; /* Darker primary color */
+}
+
+.task-form .cancel-btn {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.task-form .cancel-btn:hover {
+  background-color: #e0e0e0;
+}
