@@ -1,33 +1,393 @@
-/* CSS styles */
+/* ...existing code... */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f0f4f8; /* Light background color */
+  color: #333;
+}
+/* ...existing code... */
+
+.kanban-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+}
+/* ...existing code... */
+
+.kanban-column {
+  background: #ffffff; /* White background for columns */
+  flex: 1;
+  margin: 0 0.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 300px; /* Ensure columns have a minimum width */
+}
+.kanban-column:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+.kanban-column h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #0e6dfb; /* Primary color */
+  padding-bottom: 0.5rem;
+  font-weight: 600;
+  color: #0e6dfb; /* Primary color */
+}
+/* ...existing code... */
+
+.kanban-card, .card {
+  background: #e0e7ff; /* Light background for cards */
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  cursor: grab;
+  white-space: pre-wrap; /* Ensure multiline text is displayed correctly */
+  word-wrap: break-word; /* Break long words to fit within the card */
+  position: relative; /* Add relative positioning to the card */
+}
+.kanban-card:hover, .card:hover {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+.kanban-card.dragging, .card.dragging {
+  opacity: 0.5;
+  transform: translate(0, 0);
+  position: absolute;
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.kanban-card.hovered, .card.hovered {
+  border: 2px dashed #0e6dfb; /* Primary color */
+  background-color: #f0f4f8; /* Light background color */
+}
+/* ...existing code... */
+
+.card-title {
+  margin-top: 10px; /* Add space between title and icons */
+}
+/* ...existing code... */
+
+.card-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.card-icons span {
+  display: contents;
+}
+.card-remove-icon, .card-edit-icon {
+  cursor: pointer;
+  transition: color 0.3s;
+  margin-left: 5px;
+}
+.card-edit-icon {
+  margin-right: 5px;
+}
+.card-remove-icon:hover, .card-edit-icon:hover {
+  color: red;
+}
+.card-remove-icon i, .card-edit-icon i {
+  color: #999;
+}
+.card-remove-icon i:hover, .card-edit-icon i:hover {
+  color: #333;
+}
+/* ...existing code... */
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 5px;
+}
+.card-tags .tag {
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: white;
+  font-size: 0.8em;
+}
+/* ...existing code... */
+
+.kanban-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 10px;
+}
+/* ...existing code... */
+
+.add-task-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.add-task-btn:hover {
+  background-color: #0056b3;
+}
+/* ...existing code... */
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #cccccc;
+}
+.main-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+.main-header nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+.main-header nav a.active {
+  font-weight: bold;
+  color: #0056b3;
+}
+/* ...existing code... */
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* ...existing code... */
+
+.board-column-header {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  background-color: #0e6dfb; /* Primary color */
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+.status-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+.pull-left {
+  float: left;
+}
+.status-label {
+  margin-left: 4px;
+}
+/* ...existing code... */
+
+.add-task-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.add-task-container textarea {
+  width: 100%;
+  height: 40px;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+}
+.add-task-container button {
+  align-self: flex-end;
+  background-color: #0e6dfb; /* Primary color */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.add-task-container button:hover {
+  background-color: #0a58ca; /* Darker primary color */
+}
+/* ...existing code... */
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+  .kanban-container {
+      flex-direction: column; /* Stack columns vertically on smaller screens */
+      align-items: center; /* Center align columns */
+  }
+  .kanban-column {
+      width: 100%; /* Full width for each column */
+      margin-bottom: 1.5rem; /* Space between columns */
+  }
+}
+/* ...existing code... */
+
 .column {
-    display: inline-block;
-    vertical-align: top;
-    width: 250px;
-    padding: 10px;
-    margin: 10px;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-  }
-  
-  .column h2 {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .task {
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
-    padding: 5px;
-    margin-bottom: 5px;
-    border-radius: 3px;
-    cursor: grab;
-  }
-  
-  .task:hover {
-    background-color: #f9f9f9;
-  }
-  
-  .dragging {
-    opacity: 0.5;
-  }
-  
+  display: inline-block;
+  vertical-align: top;
+  width: 250px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+.column h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.task {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  cursor: grab;
+}
+.task:hover {
+  background-color: #f9f9f9;
+}
+.dragging {
+  opacity: 0.5;
+}
+/* ...existing code... */
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+}
+nav a.active {
+  font-weight: bold;
+  color: blue;
+}
+/* ...existing code... */
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.tag {
+  padding: 5px 10px;
+  border: 1px solid #cccccc;
+  border-radius: 15px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+.tag:hover {
+  transform: scale(1.05);
+}
+.tag.selected {
+  border: 2px solid #000000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+/* ...existing code... */
+
+.tags-manager {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  max-width: 400px;
+  margin: 10px auto;
+}
+.tag-inputs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.tag-inputs input[type="text"] {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+}
+.tag-inputs input[type="color"] {
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+.tag-inputs button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.tag-inputs button:hover {
+  background-color: #0056b3;
+}
+/* ...existing code... */
+
+.error {
+  color: red;
+  margin-bottom: 20px;
+}
+.tags-list {
+  list-style: none;
+  padding: 0;
+}
+.tag-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+}
+.tag {
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: white;
+}
+/* ...existing code... */
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  text-decoration: underline;
+}
+/* ...existing code... */

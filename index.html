@@ -1,17 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="common-style.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="common-style.css"> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="stylesv2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Kanban Board</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="root"></div>
+    <div id="modal-root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
+</body>
+
 </html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Kanban Board</title>
+    <style>
+      /* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Kanban Board Styles */
+.kanban-board {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+}
+
+/* Column Styles */
+.column {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    width: 30%; /* Each column takes up about 30% of the board */
+    margin: 0 10px; /* Margin between columns */
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Column Header Styles */
+.column h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Card Styles */
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative; /* Positioning context for delete icon */
+}
+
+/* Card Title Styles */
+.card-title {
+    display: block;
+    color: #333;
+}
+
+/* Delete Icon Styles */
+.delete-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #ff4d4d; /* Red color for visibility */
+    font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .kanban-board {
+        flex-direction: column; /* Stack columns vertically on smaller screens */
+    }
+    
+    .column {
+        width: 100%; /* Full width for each column */
+        margin-bottom: 20px; /* Space between columns */
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="kanban-board">
+        <div class="column">
+            <h2>To Do</h2>
+            <div class="card">
+                <span class="card-title">Task 1</span>
+                <span class="delete-icon" onclick="deleteCard(this)">✖</span>
+            </div>
+            <div class="card">
+                <span class="card-title">Task 2</span>
+                <span class="delete-icon" onclick="deleteCard(this)">✖</span>
+            </div>
+        </div>
+        <div class="column">
+            <h2>In Progress</h2>
+            <div class="card">
+                <span class="card-title">Task 3</span>
+                <span class="delete-icon" onclick="deleteCard(this)">✖</span>
+            </div>
+        </div>
+        <div class="column">
+            <h2>Done</h2>
+            <div class="card">
+                <span class="card-title">Task 4</span>
+                <span class="delete-icon" onclick="deleteCard(this)">✖</span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function deleteCard(element) {
+            const card = element.parentElement;
+            card.remove();
+        }
+    </script>
+</body>
+</html> -->
